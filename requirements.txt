@@ -1,0 +1,9 @@
+streamlit
+joblib
+easyocr
+numpy
+pillow
+python-dotenv
+google-generativeai
+requests
+scikit-learn
