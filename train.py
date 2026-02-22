@@ -4,7 +4,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import make_pipeline
 import joblib
 
-# 1. Dataset AMPLIADO y más específico
+# 1. Dataset
 data = {
     'texto' : [
         # Fantasía
@@ -35,7 +35,7 @@ data = {
 
 df = pd.DataFrame(data)
 
-# Mejoramos el pipeline para ignorar stop_words en español
+# pipeline para ignorar stop_words en español
 modelo = make_pipeline(
     TfidfVectorizer(
         lowercase=True, 
@@ -50,4 +50,5 @@ print("Entrenando el modelo de predicción mejorado...")
 modelo.fit(df['texto'], df['genero'])
 
 joblib.dump(modelo, 'modelo_libros.pkl')
+
 print("✅ Nuevo 'modelo_libros.pkl' generado.")
